@@ -1,0 +1,6 @@
+{
+  "org": "acme-health",
+  "repos": [
+    { "name": "priorauth-api", "branch": "main", "url": "https://github.com/varasrinivas/aidlc-priorauth-api.git" }
+  ]
+}
