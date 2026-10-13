@@ -1,0 +1,12 @@
+{
+  "stage": "code-generation",
+  "upstream_ids": ["FR1", "FR1.1", "FR1.2", "FR2", "FR3", "NFR1"],
+  "coverage": [
+    { "id": "FR1", "status": "OK", "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/aging/BusinessDays.java" },
+    { "id": "FR1.1", "status": "OK", "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/aging/BusinessDays.java" },
+    { "id": "FR1.2", "status": "OK", "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/aging/HolidayCalendar.java" },
+    { "id": "FR2", "status": "OK", "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/aging/AgeBadge.java" },
+    { "id": "FR3", "status": "OK", "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/api/PendingRequestResponse.java" },
+    { "id": "NFR1", "status": "N/A", "target": "No dependency added; pom.xml changes its version only" }
+  ]
+}
