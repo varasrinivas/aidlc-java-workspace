@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "id": "01a13951-ae71-7f78-93bd-9d5ffeea2b9e",
+      "source": {
+        "kind": "managed",
+        "path": "documents/Reviewer-Queue-API-Spec.md"
+      },
+      "sha256": "c10c55a33a5ced1ea083aa09d8156a1acbd091229058ff40ef704553085e1304",
+      "bytes": 2788,
+      "indexed_at": "2026-10-14T07:30:16.807Z",
+      "extraction": {
+        "state": "extracted",
+        "extractor": {
+          "name": "builtin-text",
+          "version": "1"
+        },
+        "chars": 2788,
+        "truncated": false,
+        "source_revision": "c10c55a33a5ced1ea083aa09d8156a1acbd091229058ff40ef704553085e1304"
+      },
+      "summary": {
+        "state": "absent"
+      },
+      "content": "documentkb/01a13951-ae71-7f78-93bd-9d5ffeea2b9e/content.md",
+      "content_sha256": "c10c55a33a5ced1ea083aa09d8156a1acbd091229058ff40ef704553085e1304"
+    }
+  ]
+}

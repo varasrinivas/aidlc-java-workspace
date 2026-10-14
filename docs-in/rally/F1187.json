@@ -1,0 +1,73 @@
+{
+  "_comment": "Two Rally WSAPI v2.0 query responses, trimmed to the fields export-rally.py fetches. Hand-written course data standing in for a real export: 'feature' answers GET portfolioitem/feature?query=(FormattedID = \"F1187\"), 'stories' answers GET hierarchicalrequirement?query=(PortfolioItem.FormattedID = \"F1187\"). c_AcceptanceCriteria is a custom field: Rally has no standard acceptance-criteria field, and its name varies by workspace.",
+  "feature": {
+    "QueryResult": {
+      "_rallyAPIMajor": "2",
+      "_rallyAPIMinor": "0",
+      "Errors": [],
+      "Warnings": [],
+      "TotalResultCount": 1,
+      "StartIndex": 1,
+      "PageSize": 200,
+      "Results": [
+        {
+          "_type": "PortfolioItem/Feature",
+          "FormattedID": "F1187",
+          "Name": "Reviewer queue filters",
+          "Description": "<p>Reviewers now see each request's age and over-limit flag (F1162, delivered in priorauth-api 1.1.0). The list is still one long queue across every health plan, so a reviewer who covers one plan, or who is clearing over-limit requests first, scrolls past rows they will not touch.</p><p>Let the screen ask the API for a narrower list: by tenant, by status, and only the over-limit rows. The screen change is a separate feature (F1190).</p>",
+          "State": { "_refObjectName": "Ready" },
+          "Parent": { "_type": "PortfolioItem/Epic", "FormattedID": "E212", "_refObjectName": "Reviewer screen v2" },
+          "Owner": { "_refObjectName": "Ravi Menon" },
+          "Release": { "_refObjectName": "2026.Q4 R2" },
+          "LastUpdateDate": "2026-10-14T10:05:00.000Z"
+        }
+      ]
+    }
+  },
+  "stories": {
+    "QueryResult": {
+      "_rallyAPIMajor": "2",
+      "_rallyAPIMinor": "0",
+      "Errors": [],
+      "Warnings": [],
+      "TotalResultCount": 3,
+      "StartIndex": 1,
+      "PageSize": 200,
+      "Results": [
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5120",
+          "Name": "Filter the pending list by tenant",
+          "Description": "<p>As a reviewer who covers one health plan, I want the pending list for my tenant only, so that I don't scroll past other plans' requests.</p><p><b>Note:</b> the sample export has only TX-01 today. Add a second tenant (NM-02) to the sample data so this story can be tested.</p>",
+          "c_AcceptanceCriteria": "<ul><li><code>GET /requests/pending?tenant=TX-01</code> returns only TX-01 rows, oldest first.</li><li>Without <code>tenant</code>, every tenant is returned, as today.</li><li>A tenant with no pending requests, or one we don't know, returns an empty list (200).</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 2.0,
+          "Owner": { "_refObjectName": "Kiran Rao" },
+          "PortfolioItem": { "_type": "PortfolioItem/Feature", "FormattedID": "F1187" }
+        },
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5121",
+          "Name": "Filter the pending list by status",
+          "Description": "<p>As a reviewer, I want to see only the requests waiting on me (<code>IN_REVIEW</code>) or only the ones waiting on the provider (<code>PENDED</code>), so that I work one kind at a time.</p>",
+          "c_AcceptanceCriteria": "<ul><li><code>?status=PENDED</code> and <code>?status=IN_REVIEW</code> return only rows with that status.</li><li>Any other value, including a status that is not pending such as <code>APPROVED</code>, returns 400 with a message naming the allowed values.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 1.0,
+          "Owner": { "_refObjectName": "Kiran Rao" },
+          "PortfolioItem": { "_type": "PortfolioItem/Feature", "FormattedID": "F1187" }
+        },
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5122",
+          "Name": "Show only the over-limit requests",
+          "Description": "<p>As a nurse manager, I want the list of requests that are over the business-day limit, so that the team clears them first.</p>",
+          "c_AcceptanceCriteria": "<ul><li><code>?overLimit=true</code> returns only rows whose <code>overLimit</code> is true; <code>?overLimit=false</code> returns the others.</li><li>The flag is computed for the same <code>asOf</code> date as the rest of the response.</li><li>Filters combine: <code>?tenant=TX-01&amp;overLimit=true</code> returns rows that match both.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 2.0,
+          "Owner": { "_refObjectName": "Kiran Rao" },
+          "PortfolioItem": { "_type": "PortfolioItem/Feature", "FormattedID": "F1187" }
+        }
+      ]
+    }
+  }
+}
