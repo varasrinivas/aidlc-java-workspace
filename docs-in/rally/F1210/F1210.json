@@ -1,0 +1,114 @@
+{
+  "_comment": "Two Rally WSAPI v2.0 query responses, trimmed to the fields export-rally.py fetches. Hand-written course data standing in for a real export: 'feature' answers GET portfolioitem/feature?query=(FormattedID = \"F1210\"), 'stories' answers GET hierarchicalrequirement?query=(PortfolioItem.FormattedID = \"F1210\"). Each story has its own Owner: the four developers. The order between stories is written in each description (Rally keeps it as Predecessors, which the exporter does not fetch). c_AcceptanceCriteria is a custom field: Rally has no standard acceptance-criteria field, and its name varies by workspace.",
+  "feature": {
+    "QueryResult": {
+      "_rallyAPIMajor": "2",
+      "_rallyAPIMinor": "0",
+      "Errors": [],
+      "Warnings": [],
+      "TotalResultCount": 1,
+      "StartIndex": 1,
+      "PageSize": 200,
+      "Results": [
+        {
+          "_type": "PortfolioItem/Feature",
+          "FormattedID": "F1210",
+          "Name": "Reviewer queue filters, end to end",
+          "Description": "<p>Reviewers scroll one long queue across every health plan. Let them narrow it on the screen, by tenant and to the over-limit rows only. The API gets the filters, the reviewer screen gets the controls.</p><p>Four stories, four developers. <b>US5150</b> lays the shared plumbing that US5151 and US5152 build on; <b>US5153</b> builds the screen against the API contract agreed before Construction, so it does not wait for the merge.</p>",
+          "State": {
+            "_refObjectName": "Ready"
+          },
+          "Parent": {
+            "_type": "PortfolioItem/Epic",
+            "FormattedID": "E212",
+            "_refObjectName": "Reviewer screen v2"
+          },
+          "Owner": {
+            "_refObjectName": "Dana Ortiz"
+          },
+          "Release": {
+            "_refObjectName": "2026.Q4 R3"
+          },
+          "LastUpdateDate": "2026-11-02T09:10:00.000Z"
+        }
+      ]
+    }
+  },
+  "stories": {
+    "QueryResult": {
+      "_rallyAPIMajor": "2",
+      "_rallyAPIMinor": "0",
+      "Errors": [],
+      "Warnings": [],
+      "TotalResultCount": 4,
+      "StartIndex": 1,
+      "PageSize": 200,
+      "Results": [
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5150",
+          "Name": "Shared filter parameters on the pending list",
+          "Description": "<p>As a developer of the reviewer queue, I want one place where the pending list's filters are read and applied, so that each filter story adds a field, not a new code path.</p><p><b>Order:</b> first. US5151 and US5152 start their code after this story is merged into the feature branch.</p>",
+          "c_AcceptanceCriteria": "<ul><li><code>GET /requests/pending</code> without filters returns exactly what it returns today.</li><li>Filters are read into one <code>RequestFilter</code> and applied in one place, after aging.</li><li>An unknown query parameter is ignored, as today.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 2.0,
+          "Owner": {
+            "_refObjectName": "Kiran Rao"
+          },
+          "PortfolioItem": {
+            "_type": "PortfolioItem/Feature",
+            "FormattedID": "F1210"
+          }
+        },
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5151",
+          "Name": "Filter the pending list by tenant",
+          "Description": "<p>As a reviewer who covers one health plan, I want the pending list for my tenant only, so that I don't scroll past other plans' requests.</p><p><b>Order:</b> after US5150. Add a second tenant (NM-02) to the sample data so this story can be tested.</p>",
+          "c_AcceptanceCriteria": "<ul><li><code>GET /requests/pending?tenant=TX-01</code> returns only TX-01 rows, oldest first.</li><li>Without <code>tenant</code>, every tenant is returned.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 2.0,
+          "Owner": {
+            "_refObjectName": "Arjun Nair"
+          },
+          "PortfolioItem": {
+            "_type": "PortfolioItem/Feature",
+            "FormattedID": "F1210"
+          }
+        },
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5152",
+          "Name": "Show only the over-limit requests",
+          "Description": "<p>As a nurse manager, I want only the requests over the business-day limit, so that the team clears them first.</p><p><b>Order:</b> after US5150. Works together with US5151's tenant filter.</p>",
+          "c_AcceptanceCriteria": "<ul><li><code>?overLimit=true</code> returns only rows whose <code>overLimit</code> is true.</li><li><code>?tenant=TX-01&amp;overLimit=true</code> applies both filters.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 1.0,
+          "Owner": {
+            "_refObjectName": "Tara Joshi"
+          },
+          "PortfolioItem": {
+            "_type": "PortfolioItem/Feature",
+            "FormattedID": "F1210"
+          }
+        },
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5153",
+          "Name": "Filter controls on the reviewer screen",
+          "Description": "<p>As a reviewer, I want a tenant picker and an \"over limit only\" switch above the queue, so that I can narrow it without typing a URL.</p><p><b>Order:</b> builds against the API contract agreed in the feature's design; it can start at once and is tested against the API when US5151 and US5152 are merged.</p>",
+          "c_AcceptanceCriteria": "<ul><li>The controls call <code>tenant</code> and <code>overLimit</code> on <code>GET /requests/pending</code>.</li><li>The list and the count above it change together.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 3.0,
+          "Owner": {
+            "_refObjectName": "Divya Pillai"
+          },
+          "PortfolioItem": {
+            "_type": "PortfolioItem/Feature",
+            "FormattedID": "F1210"
+          }
+        }
+      ]
+    }
+  }
+}

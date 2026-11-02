@@ -1,0 +1,8 @@
+{
+  // The two code repos of the four-developer guide. scripts/use-forks points the urls at your forks.
+  "org": "varasrinivas",
+  "repos": [
+    { "name": "priorauth-api", "url": "https://github.com/varasrinivas/aidlc-priorauth-api-python.git" },
+    { "name": "priorauth-web", "url": "https://github.com/varasrinivas/aidlc-priorauth-web.git" }
+  ]
+}
