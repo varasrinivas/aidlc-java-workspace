@@ -29,5 +29,16 @@ This branch has the team's files with the two repos, the Rally export and the te
    Alone? Make five clones in five folders (meena, kiran, arjun, tara, divya), one per person.
 4. Follow the guide from its step 7. The feature branch comes from the tag:
    `git -C priorauth-api switch -c feature/F1210 v1.1.0`.
+5. After the feature's PR to `main` is merged (the guide's step 19), the tech lead refreshes the code map,
+   once per repo the feature changed. Only one person rescans a repo; everyone else pulls and reuses it.
+   ```
+   aidlc engine workspace codekb-scope-diff --repo priorauth-api   # STALE: refresh it; CURRENT: reuse it
+   claude
+   /aidlc --stage reverse-engineering --single                      # full rescan after a feature like this one
+   git add aidlc/spaces/default/codekb/
+   git commit -m "AI-DLC: priorauth-api code map refreshed after F1210 (full rescan). Approved by <name>."
+   git push
+   ```
+   The rescan opens no intent, moves none and has no gate of its own: the commit message records who approved it.
 
 Tests, in every repo: `./scripts/verify.sh priorauth-api priorauth-web` (Windows: `scripts\verify.cmd ...`).
