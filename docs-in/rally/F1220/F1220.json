@@ -1,0 +1,114 @@
+{
+  "_comment": "Two Rally WSAPI v2.0 query responses, trimmed to the fields export-rally.py fetches. Hand-written course data standing in for a real export: 'feature' answers GET portfolioitem/feature?query=(FormattedID = \"F1220\"), 'stories' answers GET hierarchicalrequirement?query=(PortfolioItem.FormattedID = \"F1220\"). Each story has its own Owner. The order between stories is written in each description (Rally keeps it as Predecessors, which the exporter does not fetch). c_AcceptanceCriteria is a custom field.",
+  "feature": {
+    "QueryResult": {
+      "_rallyAPIMajor": "2",
+      "_rallyAPIMinor": "0",
+      "Errors": [],
+      "Warnings": [],
+      "TotalResultCount": 1,
+      "StartIndex": 1,
+      "PageSize": 200,
+      "Results": [
+        {
+          "_type": "PortfolioItem/Feature",
+          "FormattedID": "F1220",
+          "Name": "Remember my filter",
+          "Description": "<p>F1210 gave reviewers a tenant filter and an \"over limit only\" switch. Every morning they set them again. Remember each reviewer's last filter on the server, so it follows them to any browser, restore it when the screen opens, give them one control to clear it, and keep an audit line of every change, because the filter decides which requests a reviewer sees first.</p><p>Four stories, four developers. <b>US5160</b> is the API the others use; <b>US5163</b> extends it; <b>US5161</b> builds the screen against the agreed contract; <b>US5162</b> changes the same screen after US5161.</p>",
+          "State": {
+            "_refObjectName": "Ready"
+          },
+          "Parent": {
+            "_type": "PortfolioItem/Epic",
+            "FormattedID": "E212",
+            "_refObjectName": "Reviewer screen v2"
+          },
+          "Owner": {
+            "_refObjectName": "Dana Ortiz"
+          },
+          "Release": {
+            "_refObjectName": "2027.Q1 R1"
+          },
+          "LastUpdateDate": "2026-11-03T09:00:00.000Z"
+        }
+      ]
+    }
+  },
+  "stories": {
+    "QueryResult": {
+      "_rallyAPIMajor": "2",
+      "_rallyAPIMinor": "0",
+      "Errors": [],
+      "Warnings": [],
+      "TotalResultCount": 4,
+      "StartIndex": 1,
+      "PageSize": 200,
+      "Results": [
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5160",
+          "Name": "Save and read a reviewer's last filter",
+          "Description": "<p>As a reviewer, I want the API to keep my last filter, so that the screen can give it back to me on any computer.</p><p><b>Order:</b> first. US5161 and US5163 depend on it. No database in this product yet: keep the filters in memory, behind one class the next feature can replace.</p>",
+          "c_AcceptanceCriteria": "<ul><li><code>PUT /reviewers/{reviewerId}/filter</code> with <code>{\"tenant\": \"TX-01\", \"overLimit\": true}</code> saves it and answers 204.</li><li><code>GET /reviewers/{reviewerId}/filter</code> returns the last saved filter, or <code>{}</code> when there is none (200).</li><li>A tenant the export doesn't know is refused with 400; the saved filter stays as it was.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 3.0,
+          "Owner": {
+            "_refObjectName": "Kiran Rao"
+          },
+          "PortfolioItem": {
+            "_type": "PortfolioItem/Feature",
+            "FormattedID": "F1220"
+          }
+        },
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5161",
+          "Name": "Open the screen with my last filter",
+          "Description": "<p>As a reviewer, I want the queue to open with the filter I used last, so that I don't pick it every morning.</p><p><b>Order:</b> builds against the contract agreed in the feature's design; it can start at once. US5162 changes the same screen after it.</p>",
+          "c_AcceptanceCriteria": "<ul><li>On load the screen reads the saved filter and asks the queue with it; the controls show it.</li><li>Changing a control saves the new filter.</li><li>With no saved filter the screen opens unfiltered, as today.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 3.0,
+          "Owner": {
+            "_refObjectName": "Divya Pillai"
+          },
+          "PortfolioItem": {
+            "_type": "PortfolioItem/Feature",
+            "FormattedID": "F1220"
+          }
+        },
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5162",
+          "Name": "Clear my filters",
+          "Description": "<p>As a reviewer, I want one control that clears the tenant and the over-limit switch, so that I see the whole queue again without unpicking each control.</p><p><b>Order:</b> after US5161: the same screen code.</p>",
+          "c_AcceptanceCriteria": "<ul><li>\"Clear filters\" resets both controls, shows the whole queue and saves the empty filter.</li><li>It is disabled when no filter is set.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 1.0,
+          "Owner": {
+            "_refObjectName": "Tara Joshi"
+          },
+          "PortfolioItem": {
+            "_type": "PortfolioItem/Feature",
+            "FormattedID": "F1220"
+          }
+        },
+        {
+          "_type": "HierarchicalRequirement",
+          "FormattedID": "US5163",
+          "Name": "Audit every filter change",
+          "Description": "<p>As a nurse manager, I want a record of who changed their filter to what and when, so that I can tell why a reviewer didn't see a request.</p><p><b>Order:</b> after US5160: it records what US5160 saves.</p>",
+          "c_AcceptanceCriteria": "<ul><li>Every saved filter writes one audit line: time (UTC), reviewer, tenant, overLimit.</li><li><code>GET /reviewers/{reviewerId}/filter/history</code> returns that reviewer's lines, newest first.</li><li>A refused save (unknown tenant) writes no line.</li></ul>",
+          "ScheduleState": "Defined",
+          "PlanEstimate": 2.0,
+          "Owner": {
+            "_refObjectName": "Arjun Nair"
+          },
+          "PortfolioItem": {
+            "_type": "PortfolioItem/Feature",
+            "FormattedID": "F1220"
+          }
+        }
+      ]
+    }
+  }
+}
