@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/reviewers/rita.k/filter",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tenant": "TX-01",
+      "overLimit": true
+    }
+  },
+  "response": {
+    "status": 204,
+    "body": null
+  }
+}

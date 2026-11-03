@@ -1,0 +1,21 @@
+{
+  "given": "reviewer limit configured as 2; reviewers a1 and b1 have saved",
+  "request": {
+    "method": "PUT",
+    "path": "/reviewers/c1/filter",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tenant": null,
+      "overLimit": false
+    }
+  },
+  "response": {
+    "status": 409,
+    "body": {
+      "error": "reviewer-limit",
+      "message": "The store already holds the maximum number of reviewers."
+    }
+  }
+}

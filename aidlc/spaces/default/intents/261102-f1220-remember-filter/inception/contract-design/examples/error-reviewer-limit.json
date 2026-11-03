@@ -1,0 +1,4 @@
+{
+  "error": "reviewer-limit",
+  "message": "The store already holds the maximum number of reviewers."
+}

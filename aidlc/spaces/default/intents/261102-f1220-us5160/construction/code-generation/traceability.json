@@ -1,0 +1,133 @@
+{
+  "stage": "code-generation",
+  "upstream_ids": [
+    "AC1.1.1",
+    "AC1.1.2",
+    "AC1.1.3",
+    "AC1.1.4",
+    "AC1.1.5",
+    "AC1.1.6",
+    "AC1.1.7",
+    "AC1.1.8",
+    "AC1.1.9",
+    "AC1.1.10",
+    "AC1.1.11",
+    "AC1.1.12",
+    "AC1.1.13",
+    "FR1.6",
+    "FR8.1",
+    "NFR1",
+    "NFR3",
+    "NFR4",
+    "NFR6",
+    "NFR7",
+    "NFR8"
+  ],
+  "coverage": [
+    {
+      "id": "AC1.1.1",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterControllerTest.java"
+    },
+    {
+      "id": "AC1.1.2",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterControllerTest.java"
+    },
+    {
+      "id": "AC1.1.3",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/store/ReviewerFilterStoreTest.java"
+    },
+    {
+      "id": "AC1.1.4",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterControllerTest.java"
+    },
+    {
+      "id": "AC1.1.5",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterControllerTest.java"
+    },
+    {
+      "id": "AC1.1.6",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterControllerTest.java"
+    },
+    {
+      "id": "AC1.1.7",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterControllerTest.java"
+    },
+    {
+      "id": "AC1.1.8",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterControllerTest.java"
+    },
+    {
+      "id": "AC1.1.9",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerLimitHttpTest.java"
+    },
+    {
+      "id": "AC1.1.10",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterControllerTest.java"
+    },
+    {
+      "id": "AC1.1.11",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/TenantsControllerTest.java"
+    },
+    {
+      "id": "AC1.1.12",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/BrowserAccessPolicyTest.java"
+    },
+    {
+      "id": "AC1.1.13",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/TenantFilterTest.java"
+    },
+    {
+      "id": "FR1.6",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterContractTest.java"
+    },
+    {
+      "id": "FR8.1",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/api/BrowserAccessPolicy.java"
+    },
+    {
+      "id": "NFR1",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/store/ReviewerFilterStore.java"
+    },
+    {
+      "id": "NFR3",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/api/SavedFilterBody.java"
+    },
+    {
+      "id": "NFR4",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/api/NewEndpointErrorHandler.java"
+    },
+    {
+      "id": "NFR6",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/BrowserAccessPolicyTest.java"
+    },
+    {
+      "id": "NFR7",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/store/ReviewerFilterStoreTest.java"
+    },
+    {
+      "id": "NFR8",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/PendingRequestsControllerTest.java"
+    }
+  ]
+}

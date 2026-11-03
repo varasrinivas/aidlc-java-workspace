@@ -1,0 +1,4 @@
+{
+  "error": "invalid-reviewer-id",
+  "message": "Reviewer id must be 1-64 letters, digits, '.', '-' or '_' and contain a letter or digit."
+}

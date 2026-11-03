@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "OPTIONS",
+    "path": "/reviewers/rita.k/filter",
+    "headers": {
+      "Origin": "http://localhost:3000",
+      "Access-Control-Request-Method": "PUT",
+      "Access-Control-Request-Headers": "Content-Type"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Access-Control-Allow-Origin": "http://localhost:3000",
+      "Access-Control-Allow-Methods": "GET,PUT",
+      "Access-Control-Allow-Headers": "Content-Type"
+    }
+  },
+  "not_allowed": {
+    "request_origin": "http://evil.example",
+    "response": "no Access-Control-Allow-Origin header"
+  }
+}

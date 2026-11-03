@@ -1,0 +1,175 @@
+{
+  "stage": "code-generation",
+  "upstream_ids": [
+    "AC1.2.1",
+    "AC1.2.2",
+    "AC1.2.3",
+    "AC1.2.4",
+    "AC1.2.5",
+    "AC1.2.6",
+    "AC1.2.7",
+    "AC1.2.8",
+    "AC1.2.9",
+    "AC1.2.10",
+    "AC1.2.11",
+    "AC1.2.12",
+    "FR4.1",
+    "FR4.2",
+    "FR4.3",
+    "FR4.4",
+    "FR4.5",
+    "FR4.6",
+    "FR4.7",
+    "FR4.8",
+    "FR4.9",
+    "FR5.1",
+    "FR5.2",
+    "FR5.3",
+    "NFR5",
+    "NFR8",
+    "NFR10",
+    "NFR11"
+  ],
+  "coverage": [
+    {
+      "id": "AC1.2.1",
+      "status": "OK",
+      "target": "priorauth-web/src/render.js"
+    },
+    {
+      "id": "AC1.2.2",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "AC1.2.3",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "AC1.2.4",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "AC1.2.5",
+      "status": "OK",
+      "target": "priorauth-web/src/saved-filter-client.js"
+    },
+    {
+      "id": "AC1.2.6",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "AC1.2.7",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "AC1.2.8",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "AC1.2.9",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "AC1.2.10",
+      "status": "OK",
+      "target": "priorauth-web/src/render.js"
+    },
+    {
+      "id": "AC1.2.11",
+      "status": "OK",
+      "target": "priorauth-web/src/render.js"
+    },
+    {
+      "id": "AC1.2.12",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR4.1",
+      "status": "OK",
+      "target": "priorauth-web/index.html"
+    },
+    {
+      "id": "FR4.2",
+      "status": "OK",
+      "target": "priorauth-web/src/render.js"
+    },
+    {
+      "id": "FR4.3",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR4.4",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR4.5",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR4.6",
+      "status": "OK",
+      "target": "priorauth-web/src/saved-filter-client.js"
+    },
+    {
+      "id": "FR4.7",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR4.8",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR4.9",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR5.1",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR5.2",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR5.3",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "NFR11",
+      "status": "OK",
+      "target": "priorauth-web/test/filter-session.test.js"
+    },
+    {
+      "id": "NFR5",
+      "status": "OK",
+      "target": "priorauth-web/src/render.js"
+    },
+    {
+      "id": "NFR8",
+      "status": "OK",
+      "target": "priorauth-web/test/api.test.js"
+    },
+    {
+      "id": "NFR10",
+      "status": "Deferred",
+      "target": "Labels and the role=status area are in priorauth-web/src/render.js and tested; keyboard use is the manual check at the feature's Build and Test (story testing note)"
+    }
+  ]
+}

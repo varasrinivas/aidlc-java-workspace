@@ -1,0 +1,73 @@
+{
+  "stage": "code-generation",
+  "upstream_ids": [
+    "AC1.3.1",
+    "AC1.3.2",
+    "AC1.3.3",
+    "AC1.3.4",
+    "AC1.3.5",
+    "AC1.3.6",
+    "FR6.1",
+    "FR6.2",
+    "FR6.3",
+    "FR4.10",
+    "NFR10"
+  ],
+  "coverage": [
+    {
+      "id": "AC1.3.1",
+      "status": "OK",
+      "target": "priorauth-web/test/filter-session.test.js"
+    },
+    {
+      "id": "AC1.3.2",
+      "status": "OK",
+      "target": "priorauth-web/test/render.test.js"
+    },
+    {
+      "id": "AC1.3.3",
+      "status": "OK",
+      "target": "priorauth-web/test/render.test.js"
+    },
+    {
+      "id": "AC1.3.4",
+      "status": "OK",
+      "target": "priorauth-web/test/filter-session.test.js"
+    },
+    {
+      "id": "AC1.3.5",
+      "status": "Deferred",
+      "target": "Manual check at the feature's Build and Test: after Clear filters from the keyboard, focus moves to the Tenant picker (priorauth-web/index.html click handler); no browser tests in this team"
+    },
+    {
+      "id": "AC1.3.6",
+      "status": "OK",
+      "target": "priorauth-web/test/filter-session.test.js"
+    },
+    {
+      "id": "FR6.1",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "FR6.2",
+      "status": "OK",
+      "target": "priorauth-web/src/render.js"
+    },
+    {
+      "id": "FR6.3",
+      "status": "OK",
+      "target": "priorauth-web/test/filter-session.test.js"
+    },
+    {
+      "id": "FR4.10",
+      "status": "OK",
+      "target": "priorauth-web/src/filter-session.js"
+    },
+    {
+      "id": "NFR10",
+      "status": "OK",
+      "target": "priorauth-web/test/render.test.js"
+    }
+  ]
+}

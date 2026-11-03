@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/reviewers/rita%20k/filter"
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "error": "invalid-reviewer-id",
+      "message": "Reviewer id must be 1-64 letters, digits, '.', '-' or '_' and contain a letter or digit."
+    }
+  }
+}

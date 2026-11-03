@@ -1,0 +1,20 @@
+{
+  "note": "Invalid reviewer id AND a bad body: the reviewer id is checked first, so invalid-reviewer-id wins",
+  "request": {
+    "method": "PUT",
+    "path": "/reviewers/rita%20k/filter",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tenant": "ZZ-99"
+    }
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "error": "invalid-reviewer-id",
+      "message": "Reviewer id must be 1-64 letters, digits, '.', '-' or '_' and contain a letter or digit."
+    }
+  }
+}

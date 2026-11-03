@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/reviewers/rita.k/filter",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tenant": "ZZ-99",
+      "overLimit": false
+    }
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "error": "unknown-tenant",
+      "message": "Tenant is not a known tenant."
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "stage": "code-generation",
+  "upstream_ids": [
+    "FR7.1",
+    "FR7.2",
+    "FR7.3",
+    "FR7.4",
+    "FR7.5",
+    "FR7.6",
+    "FR1.5",
+    "NFR2",
+    "NFR4",
+    "NFR6",
+    "NFR7",
+    "NFR9",
+    "NFR11"
+  ],
+  "coverage": [
+    {
+      "id": "FR7.1",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/store/ReviewerFilterStore.java"
+    },
+    {
+      "id": "FR7.2",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/ReviewerFilterHistoryTest.java"
+    },
+    {
+      "id": "FR7.3",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/api/ReviewerFilterController.java"
+    },
+    {
+      "id": "FR7.4",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/store/ReviewerFilterStore.java"
+    },
+    {
+      "id": "FR7.5",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/store/ReviewerFilterStore.java"
+    },
+    {
+      "id": "FR7.6",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/api/ReviewerFilterController.java"
+    },
+    {
+      "id": "FR1.5",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/store/ReviewerFilterStoreTest.java"
+    },
+    {
+      "id": "NFR2",
+      "status": "OK",
+      "target": "priorauth-api/src/main/java/com/acmehealth/priorauth/store/ReviewerFilterStore.java"
+    },
+    {
+      "id": "NFR4",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/api/NewEndpointProtocolErrorTest.java"
+    },
+    {
+      "id": "NFR6",
+      "status": "N/A",
+      "target": "Covered unchanged by US5160's BrowserAccessPolicy for /reviewers/** (C5); no code change in this story"
+    },
+    {
+      "id": "NFR7",
+      "status": "OK",
+      "target": "priorauth-api/src/main/resources/application.yml"
+    },
+    {
+      "id": "NFR9",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/MutableClock.java"
+    },
+    {
+      "id": "NFR11",
+      "status": "OK",
+      "target": "priorauth-api/src/test/java/com/acmehealth/priorauth/store/ReviewerFilterStoreTest.java"
+    }
+  ]
+}

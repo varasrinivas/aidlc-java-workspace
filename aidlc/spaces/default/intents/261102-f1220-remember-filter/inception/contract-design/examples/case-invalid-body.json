@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "PUT",
+    "path": "/reviewers/rita.k/filter",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "tenant": null,
+      "overLimit": "true"
+    }
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "error": "invalid-body",
+      "message": "Filter must be JSON with exactly \"tenant\" (a known tenant or null) and \"overLimit\" (true or false)."
+    }
+  }
+}
